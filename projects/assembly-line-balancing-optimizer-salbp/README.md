@@ -7,6 +7,7 @@ The repository contains:
 - Exact SALBP-1 optimization with Google OR-Tools CP-SAT
 - Largest Candidate Rule (LCR)
 - Ranked Positional Weight (RPW)
+- COMSOAL randomized construction with reproducible multi-trial search
 - Validation utilities and tests
 - A synthetic example dataset created specifically for this repository
 
@@ -32,6 +33,16 @@ x[t,s], y[s] are binary
 
 The precedence model uses an explicit directed edge list. Task identifiers do not imply precedence.
 
+## Heuristics
+
+**Largest Candidate Rule (LCR)** prioritizes longer eligible tasks.
+
+**Ranked Positional Weight (RPW)** prioritizes each task by its own processing time plus the processing times of all transitive successors.
+
+**COMSOAL** repeatedly constructs a feasible line balance by randomly choosing among precedence-feasible tasks that fit the remaining station capacity. Multiple randomized trials are evaluated, and the implementation retains the solution with the fewest stations; ties are broken by lower squared idle-time imbalance. A fixed seed makes benchmark runs reproducible.
+
+COMSOAL is a heuristic: finding the theoretical station lower bound on an instance does not by itself prove optimality unless an independent exact method or lower-bound argument closes the gap.
+
 ## Example instance
 
 The bundled instance contains 18 tasks, 22 precedence relations, a 15-second cycle time, and 92 seconds of total work content.
@@ -43,6 +54,8 @@ ceil(92 / 15) = 7 stations
 ```
 
 A separate exhaustive dynamic-programming verification of this bundled dataset also found a minimum of 7 stations, so the instance has a known optimum of 7.
+
+With the committed seed and trial budget, COMSOAL also reaches a feasible 7-station solution on this fixture; this is tested for reproducibility but is not used as the optimality certificate.
 
 ## Installation
 
@@ -65,7 +78,7 @@ python run_example.py
 pytest -q
 ```
 
-The tests check task uniqueness, cycle-time feasibility, precedence feasibility, and the known seven-station optimum for the bundled instance.
+The tests check task uniqueness, cycle-time feasibility, precedence feasibility, COMSOAL reproducibility, and the known seven-station optimum for the bundled instance.
 
 ## Metrics
 
