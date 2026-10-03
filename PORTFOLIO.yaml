@@ -10,6 +10,7 @@ projects:
   - assembly-line-balancing-optimizer-salbp
   - energy-aware-production-scheduling-ga-java
   - flexible-manufacturing-scheduling-genetic-algorithm
+  - job-shop-lib-rl-scheduling
   - paint-shop-scheduling-genetic-algorithm
   - parallel-machine-scheduling-milp-optimization
   - resource-constrained-project-scheduling-pulp
