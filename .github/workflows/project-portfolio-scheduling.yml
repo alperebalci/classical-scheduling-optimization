@@ -1,0 +1,22 @@
+name: Project Portfolio and Scheduling
+
+on:
+  push:
+    paths:
+      - 'projects/project-portfolio-and-project-scheduling/**'
+      - '.github/workflows/project-portfolio-scheduling.yml'
+  pull_request:
+    paths:
+      - 'projects/project-portfolio-and-project-scheduling/**'
+      - '.github/workflows/project-portfolio-scheduling.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r projects/project-portfolio-and-project-scheduling/requirements.txt
+      - run: PYTHONPATH=projects/project-portfolio-and-project-scheduling pytest -q projects/project-portfolio-and-project-scheduling
