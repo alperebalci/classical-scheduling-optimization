@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "job-shop-lib-rl-scheduling"
+version = "0.1.0"
+description = "JobShopLib benchmark and RL-ready graph environment on FT06"
+requires-python = ">=3.10"
+dependencies = [
+  "job-shop-lib==1.7.1",
+  "numpy>=1.26,<3",
+  "gymnasium>=0.29,<2",
+  "ortools>=9.10,<10",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9"]
+
+[project.scripts]
+jobshoplib-benchmark = "jobshoplib_bridge.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
