@@ -19,6 +19,7 @@ The repository root contains the actively maintained **CP-SAT job-shop schedulin
 - [`paint-shop-scheduling-genetic-algorithm`](projects/paint-shop-scheduling-genetic-algorithm/)
 - [`parallel-machine-scheduling-milp-optimization`](projects/parallel-machine-scheduling-milp-optimization/)
 - [`resource-constrained-project-scheduling-pulp`](projects/resource-constrained-project-scheduling-pulp/)
+- [`project-portfolio-and-project-scheduling`](projects/project-portfolio-and-project-scheduling/) — CPM/PERT, Monte Carlo completion risk and budgeted project selection
 - [`white-goods-oven-allocation-optimization-milp`](projects/white-goods-oven-allocation-optimization-milp/)
 
 Consolidated projects keep their own files and a `SOURCE_REPOSITORY.md` provenance record. Repository-native additions are maintained directly under `projects/`. Consolidated snapshots preserve the source repository's default-branch files at consolidation time; repository-level history and metadata remain separate from the snapshot.
