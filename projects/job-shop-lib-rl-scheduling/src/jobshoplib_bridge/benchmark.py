@@ -7,10 +7,8 @@ from dataclasses import dataclass
 import numpy as np
 from job_shop_lib.benchmarking import load_benchmark_instance
 from job_shop_lib.constraint_programming import ORToolsSolver
-from job_shop_lib.dispatching import (
-    DispatcherObserverConfig,
-    DispatchingRuleSolver,
-)
+from job_shop_lib.dispatching import DispatcherObserverConfig
+from job_shop_lib.dispatching.rules import DispatchingRuleSolver
 from job_shop_lib.dispatching.feature_observers import (
     FeatureObserverType,
     FeatureType,
