@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from alb_optimizer import (
+    comsoal,
     largest_candidate_rule,
     ranked_positional_weight,
     solve_salbp1,
@@ -38,6 +39,9 @@ def main():
         ),
         "Ranked Positional Weight": ranked_positional_weight(
             task_times, precedence, CYCLE_TIME
+        ),
+        "COMSOAL (500 trials)": comsoal(
+            task_times, precedence, CYCLE_TIME, iterations=500, seed=42
         ),
     }
 
