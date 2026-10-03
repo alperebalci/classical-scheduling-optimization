@@ -7,7 +7,7 @@ This repository is the primary umbrella repository for this Jors Academy researc
 
 ### Native flagship
 
-The repository root contains the actively maintained **CP-SAT job-shop scheduling benchmark** described below. The entries under `projects/` are consolidated companion projects.
+The repository root contains the actively maintained **CP-SAT job-shop scheduling benchmark** described below. The entries under `projects/` are consolidated or repository-native companion projects.
 
 ### Included projects
 
@@ -15,12 +15,13 @@ The repository root contains the actively maintained **CP-SAT job-shop schedulin
 - [`assembly-line-balancing-optimizer-salbp`](projects/assembly-line-balancing-optimizer-salbp/)
 - [`energy-aware-production-scheduling-ga-java`](projects/energy-aware-production-scheduling-ga-java/)
 - [`flexible-manufacturing-scheduling-genetic-algorithm`](projects/flexible-manufacturing-scheduling-genetic-algorithm/)
+- [`job-shop-lib-rl-scheduling`](projects/job-shop-lib-rl-scheduling/)
 - [`paint-shop-scheduling-genetic-algorithm`](projects/paint-shop-scheduling-genetic-algorithm/)
 - [`parallel-machine-scheduling-milp-optimization`](projects/parallel-machine-scheduling-milp-optimization/)
 - [`resource-constrained-project-scheduling-pulp`](projects/resource-constrained-project-scheduling-pulp/)
 - [`white-goods-oven-allocation-optimization-milp`](projects/white-goods-oven-allocation-optimization-milp/)
 
-Each consolidated project keeps its own files and a `SOURCE_REPOSITORY.md` provenance record. The snapshot preserves the source repository's default-branch files at consolidation time; repository-level history and metadata remain separate from the snapshot.
+Consolidated projects keep their own files and a `SOURCE_REPOSITORY.md` provenance record. Repository-native additions are maintained directly under `projects/`. Consolidated snapshots preserve the source repository's default-branch files at consolidation time; repository-level history and metadata remain separate from the snapshot.
 <!-- portfolio-umbrella:end -->
 
 A reproducible Operations Research implementation of job-shop scheduling with Google OR-Tools CP-SAT. The repository focuses on interval variables, machine disjunctive constraints, job precedences, release dates, due-date penalties, solver bounds, schedule validation, and comparison with a deterministic feasible baseline.
