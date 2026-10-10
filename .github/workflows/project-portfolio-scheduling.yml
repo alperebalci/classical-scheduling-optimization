@@ -2,13 +2,9 @@ name: Project Portfolio and Scheduling
 
 on:
   push:
-    paths:
-      - 'projects/project-portfolio-and-project-scheduling/**'
-      - '.github/workflows/project-portfolio-scheduling.yml'
+    branches: [main]
   pull_request:
-    paths:
-      - 'projects/project-portfolio-and-project-scheduling/**'
-      - '.github/workflows/project-portfolio-scheduling.yml'
+  workflow_dispatch:
 
 jobs:
   test:
